@@ -16,7 +16,7 @@ export default function RSVPPage() {
     const formData = new FormData(form)
 
     try {
-      const response = await fetch('https://formspree.io/f/xpqwvwpv', {
+      const response = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
         method: 'POST',
         body: formData,
         headers: {
@@ -40,16 +40,16 @@ export default function RSVPPage() {
 
   if (submitted) {
     return (
-      <main className="min-h-screen bg-stone-50 flex items-center justify-center p-6">
-        <div className="w-full max-w-2xl bg-white rounded-lg shadow-sm p-8 md:p-12 text-center">
-          <h1 className="text-4xl font-serif text-stone-800 mb-4">Thank You!</h1>
-          <p className="text-stone-600 mb-8">
+      <main className="min-h-screen bg-gradient-to-b from-sage-50 to-sage-100 flex items-center justify-center p-6">
+        <div className="w-full max-w-2xl bg-white rounded-2xl shadow-lg p-10 md:p-14 text-center border border-sage-200">
+          <h1 className="text-5xl font-serif text-sage-900 mb-6">Thank You!</h1>
+          <p className="text-sage-700 text-lg mb-10 leading-relaxed">
             We've received your RSVP and can't wait to celebrate with you.
           </p>
           <a
             href="/"
-            className="inline-block px-8 py-3 bg-stone-800 text-white rounded-md hover:bg-stone-700 transition-colors">
-          
+            className="inline-block px-10 py-4 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors font-medium shadow-md"
+          >
             Back to Home
           </a>
         </div>
@@ -60,19 +60,19 @@ export default function RSVPPage() {
   const showCarSharingQuestion = transport === 'driving-same-day' || transport === 'driving-staying'
 
   return (
-    <main className="min-h-screen bg-stone-50 py-12 px-6">
-      <div className="w-full max-w-2xl mx-auto bg-white rounded-lg shadow-sm p-8 md:p-12">
-        <div className="text-center mb-8">
-          <h1 className="text-4xl font-serif text-stone-800 mb-3">RSVP</h1>
-          <p className="text-stone-600">
+    <main className="min-h-screen bg-gradient-to-b from-sage-50 to-sage-100 py-12 px-6">
+      <div className="w-full max-w-2xl mx-auto bg-white rounded-2xl shadow-lg p-10 md:p-12 border border-sage-200">
+        <div className="text-center mb-10">
+          <h1 className="text-5xl font-serif text-sage-900 mb-4">RSVP</h1>
+          <p className="text-sage-700 text-lg">
             Please respond by June 30, 2026
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-7">
           {/* Name */}
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-stone-700 mb-2">
+            <label htmlFor="name" className="block text-sm font-medium text-sage-800 mb-2">
               Full Name(s) *
             </label>
             <input
@@ -80,142 +80,142 @@ export default function RSVPPage() {
               id="name"
               name="name"
               required
-              className="w-full border border-stone-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-stone-400"
+              className="w-full border-2 border-sage-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
               placeholder="John and Jane Smith"
             />
           </div>
 
           {/* Attendance */}
           <div>
-            <label className="block text-sm font-medium text-stone-700 mb-3">
+            <label className="block text-sm font-medium text-sage-800 mb-3">
               Will you be attending? *
             </label>
-            <div className="space-y-2">
-              <label className="flex items-center">
+            <div className="space-y-3">
+              <label className="flex items-center p-4 border-2 border-sage-200 rounded-lg hover:bg-sage-50 cursor-pointer transition-colors">
                 <input
                   type="radio"
                   name="attendance"
                   value="yes"
                   required
-                  className="mr-3"
+                  className="mr-4 w-4 h-4 text-sage-700"
                 />
-                <span className="text-stone-700">Joyfully accepts</span>
+                <span className="text-sage-800 font-medium">Joyfully accepts</span>
               </label>
-              <label className="flex items-center">
+              <label className="flex items-center p-4 border-2 border-sage-200 rounded-lg hover:bg-sage-50 cursor-pointer transition-colors">
                 <input
                   type="radio"
                   name="attendance"
                   value="no"
-                  className="mr-3"
+                  className="mr-4 w-4 h-4 text-sage-700"
                 />
-                <span className="text-stone-700">Regretfully declines</span>
+                <span className="text-sage-800 font-medium">Regretfully declines</span>
               </label>
             </div>
           </div>
 
           {/* Dietary Requirements */}
           <div>
-            <label htmlFor="dietary" className="block text-sm font-medium text-stone-700 mb-2">
+            <label htmlFor="dietary" className="block text-sm font-medium text-sage-800 mb-2">
               Dietary Requirements or Allergies
             </label>
             <textarea
               id="dietary"
               name="dietary"
               rows={3}
-              className="w-full border border-stone-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-stone-400"
+              className="w-full border-2 border-sage-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
               placeholder="Please let us know of any dietary restrictions..."
             />
           </div>
 
           {/* Transport */}
           <div>
-            <label className="block text-sm font-medium text-stone-700 mb-3">
+            <label className="block text-sm font-medium text-sage-800 mb-3">
               How will you be getting to the wedding? *
             </label>
-            <div className="space-y-2">
-              <label className="flex items-center">
+            <div className="space-y-3">
+              <label className="flex items-center p-4 border-2 border-sage-200 rounded-lg hover:bg-sage-50 cursor-pointer transition-colors">
                 <input
                   type="radio"
                   name="transport"
                   value="driving-same-day"
                   required
-                  className="mr-3"
+                  className="mr-4 w-4 h-4 text-sage-700"
                   onChange={(e) => setTransport(e.target.value)}
                 />
-                <span className="text-stone-700">Driving down and back on the same day</span>
+                <span className="text-sage-800">Driving down and back on the same day</span>
               </label>
-              <label className="flex items-center">
+              <label className="flex items-center p-4 border-2 border-sage-200 rounded-lg hover:bg-sage-50 cursor-pointer transition-colors">
                 <input
                   type="radio"
                   name="transport"
                   value="driving-staying"
-                  className="mr-3"
+                  className="mr-4 w-4 h-4 text-sage-700"
                   onChange={(e) => setTransport(e.target.value)}
                 />
-                <span className="text-stone-700">Driving down and staying nearby</span>
+                <span className="text-sage-800">Driving down and staying nearby</span>
               </label>
-              <label className="flex items-center">
+              <label className="flex items-center p-4 border-2 border-sage-200 rounded-lg hover:bg-sage-50 cursor-pointer transition-colors">
                 <input
                   type="radio"
                   name="transport"
                   value="taxi-rideshare"
-                  className="mr-3"
+                  className="mr-4 w-4 h-4 text-sage-700"
                   onChange={(e) => setTransport(e.target.value)}
                 />
-                <span className="text-stone-700">Taxi/Rideshare</span>
+                <span className="text-sage-800">Taxi/Rideshare</span>
               </label>
-              <label className="flex items-center">
+              <label className="flex items-center p-4 border-2 border-sage-200 rounded-lg hover:bg-sage-50 cursor-pointer transition-colors">
                 <input
                   type="radio"
                   name="transport"
                   value="public-transport"
-                  className="mr-3"
+                  className="mr-4 w-4 h-4 text-sage-700"
                   onChange={(e) => setTransport(e.target.value)}
                 />
-                <span className="text-stone-700">Public transport</span>
+                <span className="text-sage-800">Public transport</span>
               </label>
             </div>
           </div>
 
           {/* Car Sharing - Only show if driving */}
           {showCarSharingQuestion && (
-            <div className="bg-sage-50 border border-sage-200 rounded-lg p-4">
-              <label className="block text-sm font-medium text-stone-700 mb-3">
+            <div className="bg-sage-100 border-2 border-sage-300 rounded-xl p-6">
+              <label className="block text-sm font-medium text-sage-900 mb-4">
                 Do you have spare seats in your car and are happy to let people travel with you from the ceremony to the reception?
               </label>
-              <div className="space-y-2">
-                <label className="flex items-center">
+              <div className="space-y-3">
+                <label className="flex items-center p-4 bg-white border-2 border-sage-200 rounded-lg hover:bg-sage-50 cursor-pointer transition-colors">
                   <input
                     type="radio"
                     name="spare-seats"
                     value="yes"
-                    className="mr-3"
+                    className="mr-4 w-4 h-4 text-sage-700"
                     onChange={(e) => setHasSpareSeats(e.target.value)}
                   />
-                  <span className="text-stone-700">Yes</span>
+                  <span className="text-sage-800 font-medium">Yes</span>
                 </label>
-                <label className="flex items-center">
+                <label className="flex items-center p-4 bg-white border-2 border-sage-200 rounded-lg hover:bg-sage-50 cursor-pointer transition-colors">
                   <input
                     type="radio"
                     name="spare-seats"
                     value="no"
-                    className="mr-3"
+                    className="mr-4 w-4 h-4 text-sage-700"
                     onChange={(e) => setHasSpareSeats(e.target.value)}
                   />
-                  <span className="text-stone-700">No</span>
+                  <span className="text-sage-800 font-medium">No</span>
                 </label>
               </div>
 
               {/* Number of spare seats - Only show if yes */}
               {hasSpareSeats === 'yes' && (
-                <div className="mt-4">
-                  <label htmlFor="seats-available" className="block text-sm font-medium text-stone-700 mb-2">
+                <div className="mt-6">
+                  <label htmlFor="seats-available" className="block text-sm font-medium text-sage-900 mb-2">
                     How many spare seats do you have?
                   </label>
                   <select
                     id="seats-available"
                     name="seats-available"
-                    className="w-full border border-stone-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-stone-400"
+                    className="w-full border-2 border-sage-200 rounded-lg p-3 bg-white focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
                   >
                     <option value="">Select...</option>
                     <option value="1">1 seat</option>
@@ -231,45 +231,44 @@ export default function RSVPPage() {
 
           {/* Bus Service Interest */}
           <div>
-            <label className="block text-sm font-medium text-stone-700 mb-2">
-              Would you be interested in an opt-in bus service from a central Melbourne location to the wedding and back? *
+            <label className="block text-sm font-medium text-sage-800 mb-2">
+              Would you be interested in an opt-in bus service from a central Melbourne location to the wedding and back?
             </label>
-            <p className="text-sm text-stone-500 mb-3">
+            <p className="text-sm text-sage-600 mb-4">
               Please note: This would cost each person $50-$80 depending on how many people opt in
             </p>
-            <div className="space-y-2">
-              <label className="flex items-center">
+            <div className="space-y-3">
+              <label className="flex items-center p-4 border-2 border-sage-200 rounded-lg hover:bg-sage-50 cursor-pointer transition-colors">
                 <input
                   type="radio"
                   name="bus-interest"
                   value="yes"
-                  className="mr-3"
-                  required
+                  className="mr-4 w-4 h-4 text-sage-700"
                 />
-                <span className="text-stone-700">Yes, I'm interested</span>
+                <span className="text-sage-800 font-medium">Yes, I'm interested</span>
               </label>
-              <label className="flex items-center">
+              <label className="flex items-center p-4 border-2 border-sage-200 rounded-lg hover:bg-sage-50 cursor-pointer transition-colors">
                 <input
                   type="radio"
                   name="bus-interest"
                   value="no"
-                  className="mr-3"
+                  className="mr-4 w-4 h-4 text-sage-700"
                 />
-                <span className="text-stone-700">No thanks</span>
+                <span className="text-sage-800 font-medium">No thanks</span>
               </label>
             </div>
           </div>
 
           {/* Song Request */}
           <div>
-            <label htmlFor="song-request" className="block text-sm font-medium text-stone-700 mb-2">
-              Song Request
+            <label htmlFor="song-request" className="block text-sm font-medium text-sage-800 mb-2">
+              Song Request (optional)
             </label>
             <textarea
               id="song-request"
               name="song-request"
               rows={3}
-              className="w-full border border-stone-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-stone-400"
+              className="w-full border-2 border-sage-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
               placeholder="Any songs you'd love to hear on the dance floor?"
             />
           </div>
@@ -278,7 +277,7 @@ export default function RSVPPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-stone-800 text-white rounded-md hover:bg-stone-700 transition-colors disabled:bg-stone-300 disabled:cursor-not-allowed font-medium"
+            className="w-full py-4 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors disabled:bg-sage-300 disabled:cursor-not-allowed font-medium text-lg shadow-md"
           >
             {loading ? 'Submitting...' : 'Submit RSVP'}
           </button>

@@ -44,18 +44,18 @@ export default function ContributePage({ params }: PageProps) {
   }
 
   return (
-    <main className="min-h-screen bg-stone-50 flex items-center justify-center p-6">
-      <div className="w-full max-w-xl bg-white rounded-lg shadow-sm p-8">
-        <h1 className="text-3xl font-serif text-stone-800 mb-6 text-center">
+    <main className="min-h-screen bg-gradient-to-b from-sage-50 to-sage-100 flex items-center justify-center p-6">
+      <div className="w-full max-w-xl bg-white rounded-2xl shadow-lg p-10 border border-sage-200">
+        <h1 className="text-4xl font-serif text-sage-900 mb-8 text-center">
           Contribute to Our Registry
         </h1>
 
         <label className="block mb-6">
-          <span className="block text-sm text-stone-700 mb-2 font-medium">
-            Your name <span className="text-stone-500 font-normal">(so we know who to thank)</span>
+          <span className="block text-sm text-sage-800 mb-2 font-medium">
+            Your name <span className="text-sage-600 font-normal">(so we know who to thank)</span>
           </span>
           <input
-            className="w-full border border-stone-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-stone-400"
+            className="w-full border-2 border-sage-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
             value={name}
             onChange={e => setName(e.target.value)}
             placeholder="Enter your name"
@@ -63,11 +63,11 @@ export default function ContributePage({ params }: PageProps) {
         </label>
 
         <label className="block mb-8">
-          <span className="block text-sm text-stone-700 mb-2 font-medium">
-            Message <span className="text-stone-500 font-normal">(optional)</span>
+          <span className="block text-sm text-sage-800 mb-2 font-medium">
+            Message <span className="text-sage-600 font-normal">(optional)</span>
           </span>
           <textarea
-            className="w-full border border-stone-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-stone-400"
+            className="w-full border-2 border-sage-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
             rows={4}
             value={message}
             onChange={e => setMessage(e.target.value)}
@@ -78,7 +78,7 @@ export default function ContributePage({ params }: PageProps) {
         <button
           onClick={handleSubmit}
           disabled={loading || !name.trim()}
-          className="w-full py-3 bg-stone-800 text-white rounded-md hover:bg-stone-700 transition-colors disabled:bg-stone-300 disabled:cursor-not-allowed font-medium"
+          className="w-full py-4 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors disabled:bg-sage-300 disabled:cursor-not-allowed font-medium text-lg shadow-md"
         >
           {loading ? 'Processing…' : 'Confirm contribution'}
         </button>

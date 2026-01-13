@@ -13,11 +13,11 @@ export default function Navigation() {
   ]
 
   return (
-    <nav className="bg-white border-b border-stone-200">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-sage-200 shadow-sm">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo/Names */}
-          <Link href="/" className="font-serif text-xl text-stone-800">
+          <Link href="/" className="font-serif text-xl text-sage-900">
             Kaylah & Darcy
           </Link>
 
@@ -29,8 +29,8 @@ export default function Navigation() {
                 href={link.href}
                 className={`text-sm transition-colors ${
                   pathname === link.href
-                    ? 'text-stone-800 font-medium'
-                    : 'text-stone-600 hover:text-stone-800'
+                    ? 'text-sage-900 font-medium'
+                    : 'text-sage-700 hover:text-sage-900'
                 }`}
               >
                 {link.label}
