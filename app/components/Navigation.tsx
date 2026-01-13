@@ -8,6 +8,7 @@ export default function Navigation() {
   
   const links = [
     { href: '/', label: 'Home' },
+    { href: '/details', label: 'Details' },
     { href: '/registry', label: 'Registry' },
     { href: '/rsvp', label: 'RSVP' },
   ]
