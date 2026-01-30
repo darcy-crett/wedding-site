@@ -3,11 +3,11 @@ import Image from 'next/image'
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen relative">
+    <main className="min-h-screen">
       {/* Fixed Background Image */}
       <div className="fixed inset-0 z-0">
         <Image
-          src="https://mduhfpicobfaqgwhxtbp.supabase.co/storage/v1/object/public/hero-images/ducks_watercolour.png"
+          src="https://mduhfpicobfaqgwhxtbp.supabase.co/storage/v1/object/public/hero-images/ducks_watercolour2.jpg"
           alt="Watercolor ducks on lake"
           fill
           className="object-cover"
@@ -19,27 +19,28 @@ export default function HomePage() {
       {/* Content with backdrop blur sections */}
       <div className="relative z-10">
         {/* Hero Section */}
-        <section className="min-h-screen flex items-center justify-center">
+        <section className="h-screen flex items-center justify-center">
           <div className="text-center px-6">
-            <p className="text-stone-700 uppercase tracking-widest text-sm mb-4">
-              Save Our Date
+            <p className="text-white uppercase tracking-widest text-sm mb-4 drop-shadow-md font-semibold">
+              Welcome to the wedding of
             </p>
             
-            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl text-stone-800 mb-6">
+            <h1 className="font-serif text-6xl md:text-7xl lg:text-8xl text-white mb-6 drop-shadow-lg">
               Kaylah & Darcy
             </h1>
             
             <div className="flex items-center justify-center gap-4 mb-8">
-              <div className="h-px w-12 bg-stone-400"></div>
-              <p className="text-stone-700 text-lg">
-                November 14, 2026
+              <div className="h-px w-12 bg-white/70"></div>
+              <p className="text-white text-lg drop-shadow-xl font-semibold">
+                Saturday, 14th November 2026
               </p>
-              <div className="h-px w-12 bg-stone-400"></div>
+              <div className="h-px w-12 bg-white/70"></div>
             </div>
+            <p className="text-white text-lg mb-12 max-w-md mx-auto drop-shadow-md"></p>
 
-            <p className="text-stone-700 text-lg mb-12 max-w-md mx-auto">
+            {/* <p className="text-white text-lg mb-12 max-w-md mx-auto drop-shadow-md">
               Join us as we celebrate our wedding day in the gardens of Coolart Historic Homestead
-            </p>
+            </p> */}
           </div>
         </section>
 
