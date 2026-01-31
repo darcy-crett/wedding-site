@@ -53,11 +53,14 @@ export default async function RegistryPage() {
                   {item.description}
                 </p>
                 
-                {/* Price and Button */}
+                {/* Suggested Price and Button */}
                 <div className="flex items-center justify-between">
-                  <span className="text-3xl font-serif text-sage-800">
-                    ${(item.price / 100).toFixed(2)}
-                  </span>
+                  <div>
+                    <span className="text-sm text-sage-600">Suggested</span>
+                    <p className="text-2xl font-serif text-sage-800">
+                      ${(item.price / 100).toFixed(0)}+
+                    </p>
+                  </div>
                   <Link
                     href={`/registry/${item.id}`}
                     className="px-6 py-3 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors text-sm font-medium shadow-sm"
