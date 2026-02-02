@@ -13,7 +13,7 @@ function generateReference() {
 export async function POST(req: Request) {
   try {
     const body = await req.json()
-    const { registryItemId, name, message, amount } = body
+    const { name, message, items } = body
 
     // Validate name
     if (!name || typeof name !== 'string' || name.trim().length < 2) {
@@ -23,29 +23,20 @@ export async function POST(req: Request) {
       )
     }
 
-    // Validate amount
-    if (!amount || typeof amount !== 'number' || amount < 1000) {
+    // Validate items array
+    if (!items || !Array.isArray(items) || items.length === 0) {
       return NextResponse.json(
-        { error: 'Please enter a valid amount (minimum $10)' },
+        { error: 'Cart is empty' },
         { status: 400 }
       )
     }
 
-    const { data: item, error: itemError } = await supabaseAdmin
-      .from('registry_items')
-      .select('*')
-      .eq('id', registryItemId)
-      .single()
+    // Calculate total amount
+    const totalAmount = items.reduce((sum, item) => sum + item.amount, 0)
 
-    if (itemError || !item) {
-      console.error('Item fetch error:', itemError)
-      return NextResponse.json({ error: 'Invalid item' }, { status: 400 })
-    }
-
-    // Validate against minimum amount for this item
-    if (amount < (item.minimum_amount || 1000)) {
+    if (totalAmount < 1000) {
       return NextResponse.json(
-        { error: `Minimum contribution for this item is $${((item.minimum_amount || 1000) / 100).toFixed(0)}` },
+        { error: 'Minimum total contribution is $10' },
         { status: 400 }
       )
     }
@@ -54,27 +45,46 @@ export async function POST(req: Request) {
     const cleanMessage = message?.trim() || null
     const reference = generateReference()
 
-    const { data, error } = await supabaseAdmin
+    // Create the order
+    const { data: order, error: orderError } = await supabaseAdmin
       .from('orders')
       .insert({
-        registry_item_id: item.id,
-        amount: amount, // Use the custom amount
+        amount: totalAmount, // Keep for backwards compatibility
+        total_amount: totalAmount,
         reference_code: reference,
         purchaser_name: cleanName,
-        purchaser_message: cleanMessage
+        purchaser_message: cleanMessage,
       })
       .select()
       .single()
 
-    if (error) {
-      console.error('Order insert error:', error)
-      return NextResponse.json({ error: error.message }, { status: 500 })
+    if (orderError) {
+      console.error('Order insert error:', orderError)
+      return NextResponse.json({ error: orderError.message }, { status: 500 })
+    }
+
+    // Create order_items entries
+    const orderItems = items.map(item => ({
+      order_id: order.id,
+      registry_item_id: item.registryItemId,
+      amount: item.amount,
+    }))
+
+    const { error: itemsError } = await supabaseAdmin
+      .from('order_items')
+      .insert(orderItems)
+
+    if (itemsError) {
+      console.error('Order items insert error:', itemsError)
+      // If order items fail, we should probably delete the order too
+      await supabaseAdmin.from('orders').delete().eq('id', order.id)
+      return NextResponse.json({ error: itemsError.message }, { status: 500 })
     }
 
     return NextResponse.json({
-      orderId: data.id,
+      orderId: order.id,
       reference: reference,
-      amount: amount
+      amount: totalAmount,
     })
   } catch (err) {
     console.error('API error:', err)

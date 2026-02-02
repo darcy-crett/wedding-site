@@ -2,6 +2,7 @@
 
 import { use, useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
+import { useCart } from '../../context/CartContext'
 
 type PageProps = {
   params: Promise<{
@@ -15,8 +16,8 @@ export default function ContributePage({ params }: PageProps) {
   const [name, setName] = useState('')
   const [message, setMessage] = useState('')
   const [amount, setAmount] = useState('')
-  const [loading, setLoading] = useState(false)
   const [item, setItem] = useState<any>(null)
+  const { addToCart } = useCart()
 
   useEffect(() => {
     async function fetchItem() {
@@ -32,7 +33,7 @@ export default function ContributePage({ params }: PageProps) {
     fetchItem()
   }, [id])
 
-  const handleSubmit = async () => {
+  const handleAddToCart = () => {
     const amountInCents = Math.round(parseFloat(amount) * 100)
     
     // Validate minimum amount
@@ -41,33 +42,19 @@ export default function ContributePage({ params }: PageProps) {
       return
     }
 
-    setLoading(true)
+    // Add to cart with custom amount
+    addToCart({
+      id: item.id,
+      title: item.title,
+      description: item.description,
+      price: item.price,
+      minimum_amount: item.minimum_amount,
+      image_url: item.image_url,
+      amount: amountInCents,
+    })
 
-    try {
-      const res = await fetch('/api/create-order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ 
-          registryItemId: id, 
-          name, 
-          message,
-          amount: amountInCents 
-        })
-      })
-      
-      const data = await res.json()
-
-      if (data.orderId) {
-        router.push(`/thank-you/${data.orderId}`)
-      } else {
-        alert(`Error: ${data.error || 'Something went wrong. Please try again.'}`)
-        setLoading(false)
-      }
-    } catch (err) {
-      console.error('Fetch error:', err)
-      alert('Something went wrong. Please try again.')
-      setLoading(false)
-    }
+    // Redirect to cart
+    router.push('/cart')
   }
 
   if (!item) {
@@ -90,18 +77,6 @@ export default function ContributePage({ params }: PageProps) {
 
         <label className="block mb-6">
           <span className="block text-sm text-sage-800 mb-2 font-medium">
-            Your name <span className="text-sage-600 font-normal">(so we know who to thank)</span>
-          </span>
-          <input
-            className="w-full border-2 border-sage-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
-            value={name}
-            onChange={e => setName(e.target.value)}
-            placeholder="Enter your name"
-          />
-        </label>
-
-        <label className="block mb-6">
-          <span className="block text-sm text-sage-800 mb-2 font-medium">
             Contribution amount
           </span>
           <div className="relative">
@@ -121,26 +96,17 @@ export default function ContributePage({ params }: PageProps) {
           </p>
         </label>
 
-        <label className="block mb-8">
-          <span className="block text-sm text-sage-800 mb-2 font-medium">
-            Message <span className="text-sage-600 font-normal">(optional)</span>
-          </span>
-          <textarea
-            className="w-full border-2 border-sage-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
-            rows={4}
-            value={message}
-            onChange={e => setMessage(e.target.value)}
-            placeholder="Leave a message for the couple..."
-          />
-        </label>
-
         <button
-          onClick={handleSubmit}
-          disabled={loading || !name.trim() || !amount || parseFloat(amount) < ((item.minimum_amount || 1000) / 100)}
+          onClick={handleAddToCart}
+          disabled={!amount || parseFloat(amount) < ((item.minimum_amount || 1000) / 100)}
           className="w-full py-4 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors disabled:bg-sage-300 disabled:cursor-not-allowed font-medium text-lg shadow-md"
         >
-          {loading ? 'Processing…' : `Contribute $${parseFloat(amount || '0').toFixed(2)}`}
+          Add to Cart - ${parseFloat(amount || '0').toFixed(2)}
         </button>
+
+        <p className="text-sm text-sage-600 text-center mt-4">
+          You'll be able to add your name and message at checkout
+        </p>
       </div>
     </main>
   )

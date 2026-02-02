@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "./components/Navigation";
+import { CartProvider } from "./context/CartContext";
 
 export const metadata: Metadata = {
   title: "Kaylah & Darcy's Wedding",
@@ -15,10 +16,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <Navigation />
-        <div className="pt-16">
-          {children}
-        </div>
+        <CartProvider>
+          <Navigation />
+          <div className="pt-16">
+            {children}
+          </div>
+        </CartProvider>
       </body>
     </html>
   );
