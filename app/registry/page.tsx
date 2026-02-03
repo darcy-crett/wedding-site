@@ -58,10 +58,39 @@ export default function RegistryPage() {
           <h1 className="text-5xl md:text-6xl font-serif text-sage-900 mb-4">
             Our Registry
           </h1>
-          <p className="text-sage-700 max-w-2xl mx-auto text-lg leading-relaxed">
+          <p className="text-sage-700 max-w-2xl mx-auto text-lg leading-relaxed mb-8">
             Your presence at our wedding is the greatest gift of all. If you wish to contribute 
             to our honeymoon or future together, we would be truly grateful.
           </p>
+
+          {/* How It Works Section */}
+          <div className="max-w-3xl mx-auto bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-sage-200 text-left">
+            <h2 className="text-2xl font-serif text-sage-900 mb-4 text-center">How It Works</h2>
+            
+            <div className="space-y-4 text-sage-700">
+              <div className="flex gap-3">
+                <span className="flex-shrink-0 w-6 h-6 bg-sage-700 text-white rounded-full flex items-center justify-center text-sm font-medium">1</span>
+                <p>Browse our registry and add items to your cart. Each item shows a suggested amount, but you can contribute any amount you're comfortable with (minimum $10).</p>
+              </div>
+              
+              <div className="flex gap-3">
+                <span className="flex-shrink-0 w-6 h-6 bg-sage-700 text-white rounded-full flex items-center justify-center text-sm font-medium">2</span>
+                <p>When you're ready, proceed to checkout where you'll provide your name and an optional message.</p>
+              </div>
+              
+              <div className="flex gap-3">
+                <span className="flex-shrink-0 w-6 h-6 bg-sage-700 text-white rounded-full flex items-center justify-center text-sm font-medium">3</span>
+                <p>You'll receive a unique reference code and bank transfer details. Complete the transfer at your convenience using the reference code so we can match your contribution.</p>
+              </div>
+            </div>
+
+            <div className="mt-6 pt-6 border-t border-sage-200">
+              <p className="text-sage-800 font-medium mb-2">Prefer to give on the day?</p>
+              <p className="text-sage-700 text-sm">
+                We will also have a wishing well at the reception for those who prefer to give a card or gift in person. Whatever you choose, we're grateful for your generosity and love.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
