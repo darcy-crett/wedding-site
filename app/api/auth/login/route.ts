@@ -3,10 +3,14 @@ import { NextResponse } from 'next/server'
 const PASSWORD = process.env.SITE_PASSWORD || 'wedding2026'
 
 export async function POST(req: Request) {
+  console.log('Login API called')
+  
   try {
     const { password } = await req.json()
+    console.log('Password received, checking...')
 
     if (password === PASSWORD) {
+      console.log('Password correct, setting cookie')
       const response = NextResponse.json({ success: true })
       
       // Set cookie that expires in 30 days
@@ -18,9 +22,11 @@ export async function POST(req: Request) {
         path: '/',
       })
 
+      console.log('Cookie set, returning response')
       return response
     }
 
+    console.log('Password incorrect')
     return NextResponse.json({ success: false }, { status: 401 })
   } catch (err) {
     console.error('Login error:', err)

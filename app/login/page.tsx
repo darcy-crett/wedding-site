@@ -15,6 +15,8 @@ export default function LoginPage() {
     setError('')
     setLoading(true)
 
+    console.log('Login attempt started')
+
     try {
       const res = await fetch('/api/auth/login', {
         method: 'POST',
@@ -22,9 +24,12 @@ export default function LoginPage() {
         body: JSON.stringify({ password }),
       })
 
+      console.log('Response status:', res.status)
       const data = await res.json()
+      console.log('Response data:', data)
 
       if (data.success) {
+        console.log('Login successful, redirecting...')
         router.push('/')
         router.refresh()
       } else {
@@ -32,6 +37,7 @@ export default function LoginPage() {
         setLoading(false)
       }
     } catch (err) {
+      console.error('Login error:', err)
       setError('Something went wrong. Please try again.')
       setLoading(false)
     }
@@ -58,7 +64,7 @@ export default function LoginPage() {
           <h1 className="text-4xl font-serif text-sage-900 mb-2">
             Kaylah & Darcy
           </h1>
-          {/* <p className="text-sage-700">November 14, 2026</p> */}
+          <p className="text-sage-700">November 14, 2026</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -74,6 +80,7 @@ export default function LoginPage() {
               className="w-full border-2 border-sage-200 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
               placeholder="Password"
               required
+              autoComplete="off"
             />
             {error && (
               <p className="text-red-600 text-sm mt-2">{error}</p>
