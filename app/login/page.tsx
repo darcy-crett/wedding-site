@@ -58,7 +58,7 @@ export default function LoginPage() {
           <h1 className="text-4xl font-serif text-sage-900 mb-2">
             Kaylah & Darcy
           </h1>
-          <p className="text-sage-700">November 14, 2026</p>
+          {/* <p className="text-sage-700">November 14, 2026</p> */}
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
