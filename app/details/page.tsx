@@ -124,7 +124,7 @@ export default function DetailsPage() {
                   <h2 className="text-base font-medium text-sage-900 mb-1">What to Expect</h2>
                   <p className="text-sm text-sage-700 leading-relaxed">
                     Following the ceremony, join us at Merricks General Store for drinks, dinner, and dancing. 
-                    The evening will include drinks, a three-course meal, and plenty of time to celebrate.
+                    The evening will include bar service, a three-course meal, and plenty of time to celebrate.
                   </p>
                 </div>
 
@@ -186,9 +186,9 @@ export default function DetailsPage() {
             </div>
 
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-sm border border-sage-200">
-              <h3 className="text-xl md:text-2xl font-serif text-sage-900 mb-3">Kids</h3>
+              <h3 className="text-xl md:text-2xl font-serif text-sage-900 mb-3">Kids & +1s</h3>
               <p className="text-sm text-sage-700 leading-relaxed">
-                We love your little ones, but we've decided to make our wedding an adults-only celebration. We hope this gives you a chance to let your hair down and enjoy the evening!
+                We would love to celebrate with everyone, however due to limited numbers we are only able to invite the guests named on the invitation. Sadly, this means no children or additional guests. We appreciate your understanding.
               </p>
             </div>
 
