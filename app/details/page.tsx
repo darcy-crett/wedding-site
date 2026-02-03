@@ -21,23 +21,23 @@ export default function DetailsPage() {
         {/* Content - Right Side on desktop, center on mobile */}
         <div className="relative z-10 w-full">
           <div className="max-w-lg mx-auto md:ml-auto md:mr-8 lg:mr-24">
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-xl border border-sage-200">
-              <h1 className="text-3xl md:text-4xl font-serif text-sage-900 mb-4">
+            <div className="bg-white/50 md:bg-white/90 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-xl border border-sage-200">
+              <h1 className="text-3xl md:text-4xl font-serif text-sage-900 mb-4 drop-shadow-sm md:drop-shadow-none">
                 Ceremony
               </h1>
               
               <div className="space-y-4 text-sage-800">
                 <div>
-                  <h2 className="text-base font-medium text-sage-900 mb-1">When</h2>
-                  <p className="text-sm text-sage-700">
+                  <h2 className="text-base font-medium text-sage-900 mb-1 drop-shadow-sm md:drop-shadow-none">When</h2>
+                  <p className="text-sm text-sage-900 md:text-sage-700 drop-shadow-sm md:drop-shadow-none">
                     Saturday, November 14, 2026<br />
                     3:00 PM arrival for a 3:30 PM start
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-base font-medium text-sage-900 mb-1">Where</h2>
-                  <p className="text-sm text-sage-700">
+                  <h2 className="text-base font-medium text-sage-900 mb-1 drop-shadow-sm md:drop-shadow-none">Where</h2>
+                  <p className="text-sm text-sage-900 md:text-sage-700 drop-shadow-sm md:drop-shadow-none">
                     Coolart Historic Homestead<br />
                     40 Lord Somers Rd<br />
                     Somers, VIC 3927
@@ -45,8 +45,8 @@ export default function DetailsPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-base font-medium text-sage-900 mb-1">What to Expect</h2>
-                  <p className="text-sm text-sage-700 leading-relaxed">
+                  <h2 className="text-base font-medium text-sage-900 mb-1 drop-shadow-sm md:drop-shadow-none">What to Expect</h2>
+                  <p className="text-sm text-sage-900 md:text-sage-700 leading-relaxed drop-shadow-sm md:drop-shadow-none">
                     Join us in the beautiful gardens of Coolart Historic Homestead for an outdoor ceremony. 
                     Please arrive by 3:00 PM to find your seats before the 3:30 PM start.
                     Join us afterwards for a drink on the lawn.
@@ -54,21 +54,21 @@ export default function DetailsPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-base font-medium text-sage-900 mb-1">Dress Code</h2>
-                  <p className="text-sm text-sage-700">
+                  <h2 className="text-base font-medium text-sage-900 mb-1 drop-shadow-sm md:drop-shadow-none">Dress Code</h2>
+                  <p className="text-sm text-sage-900 md:text-sage-700 drop-shadow-sm md:drop-shadow-none">
                     Colourful garden formal - no black. For those wearing heels, we suggest avoiding stilettos or wearing stoppers as the ceremony will be on grass.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-base font-medium text-sage-900 mb-1">Parking</h2>
-                  <p className="text-sm text-sage-700">
+                  <h2 className="text-base font-medium text-sage-900 mb-1 drop-shadow-sm md:drop-shadow-none">Parking</h2>
+                  <p className="text-sm text-sage-900 md:text-sage-700 drop-shadow-sm md:drop-shadow-none">
                     Free parking is available on-site.
                   </p>
                 </div>
 
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Coolart+Historic+Homestead+40+Lord+Somers+Rd+Somers+VIC+3927"
+                
+                <a href="https://www.google.com/maps/search/?api=1&query=Coolart+Historic+Homestead+40+Lord+Somers+Rd+Somers+VIC+3927"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-5 py-2.5 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors shadow-md font-medium text-sm mt-2"
@@ -97,23 +97,23 @@ export default function DetailsPage() {
         {/* Content - Left Side on desktop, center on mobile */}
         <div className="relative z-10 w-full">
           <div className="max-w-lg mx-auto md:mr-auto md:ml-8 lg:ml-24">
-            <div className="bg-white/90 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-xl border border-sage-200">
-              <h1 className="text-3xl md:text-4xl font-serif text-sage-900 mb-4">
+            <div className="bg-white/50 md:bg-white/90 backdrop-blur-md rounded-2xl p-6 md:p-8 shadow-xl border border-sage-200">
+              <h1 className="text-3xl md:text-4xl font-serif text-sage-900 mb-4 drop-shadow-sm md:drop-shadow-none">
                 Reception
               </h1>
               
               <div className="space-y-4 text-sage-800">
                 <div>
-                  <h2 className="text-base font-medium text-sage-900 mb-1">When</h2>
-                  <p className="text-sm text-sage-700">
+                  <h2 className="text-base font-medium text-sage-900 mb-1 drop-shadow-sm md:drop-shadow-none">When</h2>
+                  <p className="text-sm text-sage-900 md:text-sage-700 drop-shadow-sm md:drop-shadow-none">
                     Saturday, November 14, 2026<br />
                     6:00 PM onwards
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-base font-medium text-sage-900 mb-1">Where</h2>
-                  <p className="text-sm text-sage-700">
+                  <h2 className="text-base font-medium text-sage-900 mb-1 drop-shadow-sm md:drop-shadow-none">Where</h2>
+                  <p className="text-sm text-sage-900 md:text-sage-700 drop-shadow-sm md:drop-shadow-none">
                     Merricks General Store<br />
                     3460 Frankston - Flinders Rd<br />
                     Merricks, VIC 3916
@@ -121,30 +121,30 @@ export default function DetailsPage() {
                 </div>
 
                 <div>
-                  <h2 className="text-base font-medium text-sage-900 mb-1">What to Expect</h2>
-                  <p className="text-sm text-sage-700 leading-relaxed">
+                  <h2 className="text-base font-medium text-sage-900 mb-1 drop-shadow-sm md:drop-shadow-none">What to Expect</h2>
+                  <p className="text-sm text-sage-900 md:text-sage-700 leading-relaxed drop-shadow-sm md:drop-shadow-none">
                     Following the ceremony, join us at Merricks General Store for drinks, dinner, and dancing. 
                     The evening will include bar service, a three-course meal, and plenty of time to celebrate.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-base font-medium text-sage-900 mb-1">Getting There</h2>
-                  <p className="text-sm text-sage-700 leading-relaxed">
+                  <h2 className="text-base font-medium text-sage-900 mb-1 drop-shadow-sm md:drop-shadow-none">Getting There</h2>
+                  <p className="text-sm text-sage-900 md:text-sage-700 leading-relaxed drop-shadow-sm md:drop-shadow-none">
                     The reception venue is approximately 15 minutes from the ceremony. 
                     We recommend carpooling or arranging rideshare in advance.
                   </p>
                 </div>
 
                 <div>
-                  <h2 className="text-base font-medium text-sage-900 mb-1">Parking</h2>
-                  <p className="text-sm text-sage-700">
+                  <h2 className="text-base font-medium text-sage-900 mb-1 drop-shadow-sm md:drop-shadow-none">Parking</h2>
+                  <p className="text-sm text-sage-900 md:text-sage-700 drop-shadow-sm md:drop-shadow-none">
                     Free parking available on site.
                   </p>
                 </div>
 
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Merricks+General+Store+3460+Frankston+Flinders+Rd+Merricks+VIC+3916"
+                
+                <a href="https://www.google.com/maps/search/?api=1&query=Merricks+General+Store+3460+Frankston+Flinders+Rd+Merricks+VIC+3916"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-5 py-2.5 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors shadow-md font-medium text-sm mt-2"
