@@ -75,7 +75,7 @@ export default function RegistryPage() {
               
               <div className="flex gap-3">
                 <span className="flex-shrink-0 w-6 h-6 bg-sage-700 text-white rounded-full flex items-center justify-center text-sm font-medium">2</span>
-                <p>When you're ready, proceed to checkout where you'll provide your name and an optional message.</p>
+                <p>When you're ready, proceed to checkout where you'll provide your name and an optional message. No payment details required.</p>
               </div>
               
               <div className="flex gap-3">
