@@ -8,13 +8,15 @@ import { useCart } from '../context/CartContext'
 export default function RegistryPage() {
   const [items, setItems] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
+  const [sortBy, setSortBy] = useState('popular')
   const { addToCart, cart } = useCart()
   const [addedItems, setAddedItems] = useState<Set<string>>(new Set())
 
   useEffect(() => {
     async function fetchItems() {
+      setLoading(true)
       try {
-        const res = await fetch('/api/registry-items')
+        const res = await fetch(`/api/registry-items?sort=${sortBy}`)
         const data = await res.json()
         setItems(data)
       } catch (error) {
@@ -24,7 +26,7 @@ export default function RegistryPage() {
       }
     }
     fetchItems()
-  }, [])
+  }, [sortBy])
 
   const handleAddToCart = (item: any) => {
     addToCart({
@@ -75,7 +77,7 @@ export default function RegistryPage() {
               
               <div className="flex gap-3">
                 <span className="flex-shrink-0 w-6 h-6 bg-sage-700 text-white rounded-full flex items-center justify-center text-sm font-medium">2</span>
-                <p>When you're ready, proceed to checkout where you'll provide your name and an optional message. No payment details required.</p>
+                <p>When you're ready, proceed to checkout where you'll provide your name and an optional message.</p>
               </div>
               
               <div className="flex gap-3">
@@ -96,6 +98,28 @@ export default function RegistryPage() {
 
       {/* Registry Items Grid */}
       <div className="max-w-6xl mx-auto px-6 py-16">
+        {/* Sort Dropdown */}
+        <div className="flex justify-end mb-8">
+          <div className="relative">
+            <label htmlFor="sort" className="sr-only">Sort by</label>
+            <select
+              id="sort"
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value)}
+              className="appearance-none bg-white border-2 border-sage-200 rounded-lg px-4 py-2 pr-10 text-sage-800 focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent cursor-pointer"
+            >
+              <option value="popular">Most Popular</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="price-low">Price: Low to High</option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-3 text-sage-700">
+              <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
         {loading ? (
           <div className="text-center py-16">
             <div className="inline-block animate-spin rounded-full h-12 w-12 border-4 border-sage-200 border-t-sage-700"></div>
