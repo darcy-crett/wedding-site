@@ -18,7 +18,7 @@ export default function RootLayout({
       <body className="antialiased">
         <CartProvider>
           <Navigation />
-          <div className="pt-16">
+          <div className="pt-16 2xl:pt-20">
             {children}
           </div>
         </CartProvider>

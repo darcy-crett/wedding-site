@@ -19,20 +19,20 @@ export default function Navigation() {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/80 backdrop-blur-md border-b border-sage-200 shadow-sm">
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-6xl xl:max-w-7xl mx-auto px-6 xl:px-12">
+        <div className="flex items-center justify-between h-16 2xl:h-20">
           {/* Logo/Names */}
-          <Link href="/" className="font-serif text-xl text-sage-900">
+          <Link href="/" className="font-serif text-xl xl:text-2xl text-sage-900">
             Kaylah & Darcy
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8 xl:gap-12">
             {links.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm transition-colors ${
+                className={`text-sm xl:text-base transition-colors ${
                   pathname === link.href
                     ? 'text-sage-900 font-medium'
                     : 'text-sage-700 hover:text-sage-900'
@@ -42,7 +42,6 @@ export default function Navigation() {
               </Link>
             ))}
             
-            {/* Cart Icon */}
             {/* Cart Icon - Only show if cart has items */}
             {cartCount > 0 && (
               <Link
@@ -55,7 +54,7 @@ export default function Navigation() {
                   viewBox="0 0 24 24"
                   strokeWidth={1.5}
                   stroke="currentColor"
-                  className="w-6 h-6"
+                  className="w-6 h-6 xl:w-7 xl:h-7"
                 >
                   <path
                     strokeLinecap="round"
@@ -72,7 +71,6 @@ export default function Navigation() {
 
           {/* Mobile Hamburger Button & Cart */}
           <div className="md:hidden flex items-center gap-4">
-            {/* Cart Icon - Only show if cart has items */}
             {cartCount > 0 && (
               <Link
                 href="/cart"
