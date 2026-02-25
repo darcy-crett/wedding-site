@@ -52,11 +52,9 @@ export default function CartPage() {
   }
 
   const handleUpdateAmount = (itemId: string, newAmount: string) => {
-    // Allow empty string for editing
     if (newAmount === '') {
       const item = cart.find(i => i.id === itemId)
       if (item) {
-        // Temporarily set to minimum amount to allow deletion
         updateAmount(itemId, item.minimum_amount || 1000)
       }
       return
@@ -65,7 +63,6 @@ export default function CartPage() {
     const amountInCents = Math.round(parseFloat(newAmount) * 100)
     const item = cart.find(i => i.id === itemId)
     
-    // Only update if it's a valid number
     if (!isNaN(amountInCents) && item) {
       updateAmount(itemId, amountInCents)
     }
@@ -74,14 +71,14 @@ export default function CartPage() {
   if (cart.length === 0) {
     return (
       <main className="min-h-screen bg-gradient-to-b from-sage-50 to-sage-100 flex items-center justify-center p-6">
-        <div className="w-full max-w-2xl bg-white rounded-2xl shadow-lg p-10 text-center border border-sage-200">
-          <h1 className="text-4xl font-serif text-sage-900 mb-4">Your Cart is Empty</h1>
-          <p className="text-sage-700 mb-8">
+        <div className="w-full max-w-2xl 2xl:max-w-4xl bg-white rounded-2xl shadow-lg p-10 2xl:p-16 text-center border border-sage-200">
+          <h1 className="text-4xl 2xl:text-5xl font-serif text-sage-900 mb-4 2xl:mb-6">Your Cart is Empty</h1>
+          <p className="text-sage-700 text-lg 2xl:text-xl mb-8 2xl:mb-10">
             Browse our registry to find items you'd like to contribute to.
           </p>
           <Link
             href="/registry"
-            className="inline-block px-8 py-3 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors font-medium"
+            className="inline-block px-8 py-3 2xl:px-10 2xl:py-4 text-base 2xl:text-lg bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors font-medium"
           >
             View Registry
           </Link>
@@ -91,24 +88,24 @@ export default function CartPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-sage-50 to-sage-100 py-12 px-4 md:px-6">
-      <div className="max-w-4xl mx-auto">
-        <h1 className="text-4xl md:text-5xl font-serif text-sage-900 mb-8 text-center">
+    <main className="min-h-screen bg-gradient-to-b from-sage-50 to-sage-100 py-12 2xl:py-20 px-4 md:px-6 2xl:px-12">
+      <div className="max-w-5xl 2xl:max-w-7xl mx-auto">
+        <h1 className="text-4xl md:text-5xl 2xl:text-6xl font-serif text-sage-900 mb-8 2xl:mb-12 text-center">
           Your Cart
         </h1>
 
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 2xl:gap-12">
           {/* Cart Items */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-4 2xl:space-y-6">
             {cart.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-xl p-6 shadow-sm border border-sage-200"
+                className="bg-white rounded-xl p-6 2xl:p-8 shadow-sm border border-sage-200"
               >
-                <div className="flex gap-4">
+                <div className="flex gap-4 2xl:gap-6">
                   {/* Image */}
                   {item.image_url && (
-                    <div className="relative w-24 h-24 flex-shrink-0 rounded-lg overflow-hidden bg-sage-50">
+                    <div className="relative w-24 h-24 2xl:w-32 2xl:h-32 flex-shrink-0 rounded-lg overflow-hidden bg-sage-50">
                       <Image
                         src={item.image_url}
                         alt={item.title}
@@ -121,7 +118,7 @@ export default function CartPage() {
                   {/* Content */}
                   <div className="flex-1 min-w-0">
                     <div className="flex justify-between items-start mb-2">
-                      <h3 className="text-lg font-serif text-sage-900">
+                      <h3 className="text-lg 2xl:text-xl font-serif text-sage-900">
                         {item.title}
                       </h3>
                       <button
@@ -135,7 +132,7 @@ export default function CartPage() {
                           viewBox="0 0 24 24"
                           strokeWidth={1.5}
                           stroke="currentColor"
-                          className="w-5 h-5"
+                          className="w-5 h-5 2xl:w-6 2xl:h-6"
                         >
                           <path
                             strokeLinecap="round"
@@ -146,18 +143,18 @@ export default function CartPage() {
                       </button>
                     </div>
 
-                    <p className="text-sm text-sage-600 mb-3 line-clamp-2">
+                    <p className="text-sm 2xl:text-base text-sage-600 mb-3 2xl:mb-4 line-clamp-2">
                       {item.description}
                     </p>
 
                     {/* Amount Input */}
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 2xl:gap-6">
                       <div className="flex-1 max-w-xs">
-                        <label className="block text-xs text-sage-700 mb-1">
+                        <label className="block text-xs 2xl:text-sm text-sage-700 mb-1">
                           Amount
                         </label>
                         <div className="relative">
-                          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sage-700">
+                          <span className="absolute left-3 top-1/2 -translate-y-1/2 text-sage-700 2xl:text-lg">
                             $
                           </span>
                           <input
@@ -169,20 +166,19 @@ export default function CartPage() {
                               handleUpdateAmount(item.id, e.target.value)
                             }
                             onBlur={(e) => {
-                              // Ensure minimum amount on blur
                               const amountInCents = Math.round(parseFloat(e.target.value) * 100)
                               const minAmount = item.minimum_amount || 1000
                               if (isNaN(amountInCents) || amountInCents < minAmount) {
                                 updateAmount(item.id, minAmount)
                               }
                             }}
-                            className="w-full border-2 border-sage-200 rounded-lg py-2 pl-7 pr-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
+                            className="w-full border-2 border-sage-200 rounded-lg py-2 pl-7 pr-3 2xl:py-3 2xl:pl-9 2xl:pr-4 text-sm 2xl:text-base focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
                           />
                         </div>
                       </div>
                       <div className="text-right">
-                        <p className="text-xs text-sage-600">Suggested</p>
-                        <p className="text-sm font-medium text-sage-800">
+                        <p className="text-xs 2xl:text-sm text-sage-600">Suggested</p>
+                        <p className="text-sm 2xl:text-base font-medium text-sage-800">
                           ${(item.price / 100).toFixed(0)}
                         </p>
                       </div>
@@ -194,7 +190,7 @@ export default function CartPage() {
 
             <button
               onClick={clearCart}
-              className="text-sm text-sage-600 hover:text-red-600 transition-colors"
+              className="text-sm 2xl:text-base text-sage-600 hover:text-red-600 transition-colors"
             >
               Clear Cart
             </button>
@@ -202,14 +198,14 @@ export default function CartPage() {
 
           {/* Checkout Summary */}
           <div className="lg:col-span-1">
-            <div className="bg-white rounded-xl p-6 shadow-sm border border-sage-200 sticky top-24">
-              <h2 className="text-2xl font-serif text-sage-900 mb-6">
+            <div className="bg-white rounded-xl p-6 2xl:p-8 shadow-sm border border-sage-200 sticky top-24">
+              <h2 className="text-2xl 2xl:text-3xl font-serif text-sage-900 mb-6 2xl:mb-8">
                 Checkout
               </h2>
 
-              <div className="space-y-4 mb-6">
+              <div className="space-y-4 2xl:space-y-6 mb-6 2xl:mb-8">
                 <label className="block">
-                  <span className="block text-sm text-sage-800 mb-2 font-medium">
+                  <span className="block text-sm 2xl:text-base text-sage-800 mb-2 font-medium">
                     Your name *
                   </span>
                   <input
@@ -217,12 +213,12 @@ export default function CartPage() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Enter your name"
-                    className="w-full border-2 border-sage-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
+                    className="w-full border-2 border-sage-200 rounded-lg p-3 2xl:p-4 text-sm 2xl:text-base focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
                   />
                 </label>
 
                 <label className="block">
-                  <span className="block text-sm text-sage-800 mb-2 font-medium">
+                  <span className="block text-sm 2xl:text-base text-sage-800 mb-2 font-medium">
                     Message (optional)
                   </span>
                   <textarea
@@ -230,19 +226,19 @@ export default function CartPage() {
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Leave a message for the couple..."
                     rows={3}
-                    className="w-full border-2 border-sage-200 rounded-lg p-3 text-sm focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
+                    className="w-full border-2 border-sage-200 rounded-lg p-3 2xl:p-4 text-sm 2xl:text-base focus:outline-none focus:ring-2 focus:ring-sage-500 focus:border-transparent"
                   />
                 </label>
               </div>
 
-              <div className="border-t border-sage-200 pt-4 mb-6">
-                <div className="flex justify-between items-center mb-2">
+              <div className="border-t border-sage-200 pt-4 2xl:pt-6 mb-6 2xl:mb-8">
+                <div className="flex justify-between items-center mb-2 text-base 2xl:text-lg">
                   <span className="text-sage-700">Items ({cart.length})</span>
                   <span className="text-sage-900 font-medium">
                     ${(cartTotal / 100).toFixed(2)}
                   </span>
                 </div>
-                <div className="flex justify-between items-center text-lg font-serif">
+                <div className="flex justify-between items-center text-lg 2xl:text-xl font-serif">
                   <span className="text-sage-900">Total</span>
                   <span className="text-sage-900">
                     ${(cartTotal / 100).toFixed(2)}
@@ -253,14 +249,14 @@ export default function CartPage() {
               <button
                 onClick={handleCheckout}
                 disabled={loading || !name.trim()}
-                className="w-full py-3 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors disabled:bg-sage-300 disabled:cursor-not-allowed font-medium shadow-md"
+                className="w-full py-3 2xl:py-4 text-base 2xl:text-lg bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors disabled:bg-sage-300 disabled:cursor-not-allowed font-medium shadow-md"
               >
                 {loading ? 'Processing...' : 'Complete Contribution'}
               </button>
 
               <Link
                 href="/registry"
-                className="block text-center text-sm text-sage-600 hover:text-sage-800 mt-4"
+                className="block text-center text-sm 2xl:text-base text-sage-600 hover:text-sage-800 mt-4"
               >
                 ← Continue Gifting
               </Link>
