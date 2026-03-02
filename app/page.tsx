@@ -40,7 +40,7 @@ export default function HomePage() {
         </section>
 
         {/* Single continuous frosted glass panel */}
-        <div className="backdrop-blur-md bg-white/60">
+        <div className="backdrop-blur-sm bg-white/60">
 
         {/* Details Section */}
         <section className="py-20 xl:py-32 px-6">
