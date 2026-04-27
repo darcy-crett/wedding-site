@@ -133,7 +133,7 @@ export default function RegistryPage() {
             {items.map((item) => (
               <div
                 key={item.id}
-                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-sage-100 hover:border-sage-300"
+                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all border border-sage-100 hover:border-sage-300 flex flex-col"
               >
                 {/* Image */}
                 {item.image_url && (
@@ -148,7 +148,7 @@ export default function RegistryPage() {
                 )}
 
                 {/* Content */}
-                <div className="p-6 2xl:p-8">
+                <div className="p-6 2xl:p-8 flex flex-col flex-1">
                   <h2 className="text-2xl 2xl:text-3xl font-serif text-sage-900 mb-3">
                     {item.title}
                   </h2>
@@ -157,7 +157,7 @@ export default function RegistryPage() {
                   </p>
                   
                   {/* Suggested Price and Buttons */}
-                  <div className="space-y-3">
+                  <div className="space-y-3 mt-auto">
                     <div className="flex items-center justify-between">
                       <div>
                         <span className="text-sm 2xl:text-base text-sage-600">Suggested</span>
