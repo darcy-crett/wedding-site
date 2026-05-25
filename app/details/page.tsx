@@ -66,7 +66,7 @@ export default function DetailsPage() {
                 </div>
 
                 
-                <a  href="https://www.google.com/maps/search/?api=1&query=Coolart+Historic+Homestead+40+Lord+Somers+Rd+Somers+VIC+3927"
+                <a  href="https://maps.app.goo.gl/4YYjKECYcXfBguLG6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-5 py-2.5 2xl:px-8 2xl:py-4 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors shadow-md font-medium text-sm 2xl:text-lg mt-2"
