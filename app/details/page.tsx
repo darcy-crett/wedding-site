@@ -38,7 +38,9 @@ export default function DetailsPage() {
                   <p className="text-sm 2xl:text-lg text-sage-900 md:text-sage-700 drop-shadow-sm md:drop-shadow-none">
                     Coolart Historic Homestead<br />
                     40 Lord Somers Rd<br />
-                    Somers, VIC 3927
+                    Somers, VIC 3927<br />
+                    <br />
+                    Enter via Coolart Entry Rd
                   </p>
                 </div>
 

@@ -65,7 +65,7 @@ export default function RSVPPage() {
         <div className="text-center mb-10 2xl:mb-14">
           <h1 className="text-5xl 2xl:text-6xl font-serif text-sage-900 mb-4 2xl:mb-6">RSVP</h1>
           <p className="text-sage-700 text-lg 2xl:text-xl">
-            Please respond by 1st September 2026
+            Please respond by 14th September 2026
           </p>
         </div>
 
