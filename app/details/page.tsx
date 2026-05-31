@@ -53,13 +53,6 @@ export default function DetailsPage() {
                   </p>
                 </div>
 
-                {/* <div>
-                  <h2 className="text-base 2xl:text-xl font-medium text-sage-900 mb-1 2xl:mb-2 drop-shadow-sm md:drop-shadow-none">Dress Code</h2>
-                  <p className="text-sm 2xl:text-lg text-sage-900 md:text-sage-700 drop-shadow-sm md:drop-shadow-none">
-                    Colourful garden formal - no black. For those wearing heels, we suggest avoiding stilettos or wearing stoppers as the ceremony will be on grass.
-                  </p>
-                </div> */}
-
                 <div>
                   <h2 className="text-base 2xl:text-xl font-medium text-sage-900 mb-1 2xl:mb-2 drop-shadow-sm md:drop-shadow-none">Parking</h2>
                   <p className="text-sm 2xl:text-lg text-sage-900 md:text-sage-700 drop-shadow-sm md:drop-shadow-none">
@@ -172,6 +165,14 @@ export default function DetailsPage() {
             </div>
 
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 2xl:p-10 shadow-sm border border-sage-200">
+              <h3 className="text-xl md:text-2xl 2xl:text-3xl font-serif text-sage-900 mb-3 2xl:mb-4">Kids & +1s</h3>
+              <p className="text-sm 2xl:text-lg text-sage-700 leading-relaxed">
+                We would love to celebrate with everyone, however due to limited numbers we are only able to invite the guests named on the invitation. <br />
+                Sadly, this means no children or additional guests. We appreciate your understanding.
+              </p>
+            </div>
+
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 2xl:p-10 shadow-sm border border-sage-200">
               <h3 className="text-xl md:text-2xl 2xl:text-3xl font-serif text-sage-900 mb-3 2xl:mb-4">Weather</h3>
               <p className="text-sm 2xl:text-lg text-sage-700 leading-relaxed mb-3">
                 November in Victoria can be warm and beautiful, but also unpredictable! The ceremony will be outdoors, so please come prepared for sun or possible showers.
@@ -182,16 +183,20 @@ export default function DetailsPage() {
             </div>
 
             <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 2xl:p-10 shadow-sm border border-sage-200">
-              <h3 className="text-xl md:text-2xl 2xl:text-3xl font-serif text-sage-900 mb-3 2xl:mb-4">Kids & +1s</h3>
-              <p className="text-sm 2xl:text-lg text-sage-700 leading-relaxed">
-                We would love to celebrate with everyone, however due to limited numbers we are only able to invite the guests named on the invitation. Sadly, this means no children or additional guests. We appreciate your understanding.
-              </p>
-            </div>
-
-            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 2xl:p-10 shadow-sm border border-sage-200">
               <h3 className="text-xl md:text-2xl 2xl:text-3xl font-serif text-sage-900 mb-3 2xl:mb-4">Dress Code</h3>
               <p className="text-sm 2xl:text-lg text-sage-700 leading-relaxed mb-3">
-                Colourful garden formal — no black please! Think florals, pastels, and bold colours that suit a beautiful spring garden setting.
+                Garden formal. Click{' '}
+                <a
+                  href="https://mduhfpicobfaqgwhxtbp.supabase.co/storage/v1/object/public/hero-images/dress%20code.jpeg"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sage-700 font-semibold underline hover:text-sage-900 transition-colors"
+                >
+                  here
+                </a>
+                {' '}for inspo!<br />
+                <br />
+                We kindly request guests to join us in colour! Please avoid wearing black or white. For the men this can be coloured suits, including navy, and for the women any colours or patterns welcomed.
               </p>
               <p className="text-sm 2xl:text-lg text-sage-700 leading-relaxed">
                 For those wearing heels, we recommend avoiding stilettos or using heel stoppers as the ceremony will be held on grass.
@@ -221,7 +226,7 @@ export default function DetailsPage() {
             Will You Join Us?
           </h2>
           <p className="text-sage-200 mb-8 2xl:mb-10 text-base 2xl:text-lg">
-            We kindly request the pleasure of your response by 1st September 2026
+            We kindly request the pleasure of your response by 14th September 2026
           </p>
           <Link
             href="/rsvp"
