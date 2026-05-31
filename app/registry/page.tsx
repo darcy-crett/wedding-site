@@ -204,7 +204,7 @@ export default function RegistryPage() {
             Will You Join Us?
           </h2>
           <p className="text-sage-200 mb-8 2xl:mb-10 text-base 2xl:text-lg">
-            We kindly request the pleasure of your response by 1st September 2026
+            We kindly request the pleasure of your response by 14th September 2026
           </p>
           <Link
             href="/rsvp"
