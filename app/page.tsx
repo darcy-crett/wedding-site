@@ -47,25 +47,41 @@ export default function HomePage() {
           <div className="max-w-6xl xl:max-w-7xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 xl:gap-16 2xl:gap-24">
               {/* Ceremony */}
-              <div className="text-center bg-white rounded-2xl p-8 xl:p-12 shadow-lg border border-sage-200">
+              <div className="text-center bg-white rounded-2xl p-8 xl:p-12 shadow-lg border border-sage-200 flex flex-col">
                 <h2 className="font-serif text-3xl xl:text-4xl text-sage-900 mb-4">Ceremony</h2>
                 <p className="text-sage-700 mb-2 font-medium text-base xl:text-lg">3:00pm arrival for a 3:30pm start</p>
-                <p className="text-sage-700 leading-relaxed text-base">
+                <p className="text-sage-700 leading-relaxed text-base mb-6">
                   Coolart Historic Homestead<br />
                   40 Lord Somers Rd<br />
                   Somers, 3927
                 </p>
+                <a
+                  href="https://maps.app.goo.gl/4YYjKECYcXfBguLG6"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto inline-block px-6 py-3 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors shadow-md font-medium text-sm xl:text-base"
+                >
+                  Get Directions
+                </a>
               </div>
 
               {/* Reception */}
-              <div className="text-center bg-white rounded-2xl p-8 xl:p-12 shadow-lg border border-sage-200">
+              <div className="text-center bg-white rounded-2xl p-8 xl:p-12 shadow-lg border border-sage-200 flex flex-col">
                 <h2 className="font-serif text-3xl xl:text-4xl text-sage-900 mb-4">Reception</h2>
                 <p className="text-sage-700 mb-2 font-medium text-base xl:text-lg">6:00pm</p>
-                <p className="text-sage-700 leading-relaxed text-base">
+                <p className="text-sage-700 leading-relaxed text-base mb-6">
                   Merricks General Store<br />
                   3460 Frankston - Flinders Rd<br />
                   Merricks, 3916
                 </p>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Merricks+General+Store+3460+Frankston+Flinders+Rd+Merricks+VIC+3916"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-auto inline-block px-6 py-3 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors shadow-md font-medium text-sm xl:text-base"
+                >
+                  Get Directions
+                </a>
               </div>
             </div>
           </div>
@@ -294,25 +310,26 @@ export default function HomePage() {
           </div>
         </section>
 
+        </div>{/* end continuous frosted glass panel */}
+
         {/* RSVP CTA */}
-        <section className="py-20 xl:py-32 px-6">
+        <section className="py-20 xl:py-32 px-6 bg-sage-700">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="font-serif text-4xl xl:text-5xl text-sage-900 mb-6">
+            <h2 className="font-serif text-4xl xl:text-5xl text-white mb-6">
               Will You Join Us?
             </h2>
-            <p className="text-sage-700 mb-8 text-lg xl:text-xl">
-              We kindly request the pleasure of your response by June 30, 2026
+            <p className="text-sage-200 mb-8 text-lg xl:text-xl">
+              We kindly request the pleasure of your response by 1st September 2026
             </p>
             <Link
               href="/rsvp"
-              className="inline-block px-12 py-4 text-base xl:text-lg bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors shadow-md font-medium"
+              className="inline-block px-12 py-4 text-base xl:text-lg bg-white text-sage-700 rounded-lg hover:bg-sage-50 transition-colors shadow-md font-medium"
             >
               RSVP Now
             </Link>
           </div>
         </section>
 
-        </div>{/* end continuous frosted glass panel */}
       </div>
     </main>
   )

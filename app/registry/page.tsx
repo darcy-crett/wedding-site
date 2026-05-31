@@ -196,6 +196,24 @@ export default function RegistryPage() {
           </div>
         )}
       </div>
+
+      {/* RSVP Footer */}
+      <section className="py-16 md:py-20 2xl:py-32 px-4 md:px-6 bg-sage-700">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl 2xl:text-5xl font-serif text-white mb-4 2xl:mb-6">
+            Will You Join Us?
+          </h2>
+          <p className="text-sage-200 mb-8 2xl:mb-10 text-base 2xl:text-lg">
+            We kindly request the pleasure of your response by 1st September 2026
+          </p>
+          <Link
+            href="/rsvp"
+            className="inline-block px-12 py-4 2xl:px-14 2xl:py-5 text-base 2xl:text-lg bg-white text-sage-700 rounded-lg hover:bg-sage-50 transition-colors shadow-md font-medium"
+          >
+            RSVP Now
+          </Link>
+        </div>
+      </section>
     </main>
   )
 }

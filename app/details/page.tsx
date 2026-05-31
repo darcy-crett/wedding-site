@@ -51,12 +51,12 @@ export default function DetailsPage() {
                   </p>
                 </div>
 
-                <div>
+                {/* <div>
                   <h2 className="text-base 2xl:text-xl font-medium text-sage-900 mb-1 2xl:mb-2 drop-shadow-sm md:drop-shadow-none">Dress Code</h2>
                   <p className="text-sm 2xl:text-lg text-sage-900 md:text-sage-700 drop-shadow-sm md:drop-shadow-none">
                     Colourful garden formal - no black. For those wearing heels, we suggest avoiding stilettos or wearing stoppers as the ceremony will be on grass.
                   </p>
-                </div>
+                </div> */}
 
                 <div>
                   <h2 className="text-base 2xl:text-xl font-medium text-sage-900 mb-1 2xl:mb-2 drop-shadow-sm md:drop-shadow-none">Parking</h2>
@@ -65,8 +65,7 @@ export default function DetailsPage() {
                   </p>
                 </div>
 
-                
-                <a  href="https://maps.app.goo.gl/4YYjKECYcXfBguLG6"
+                <a href="https://maps.app.goo.gl/4YYjKECYcXfBguLG6"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-5 py-2.5 2xl:px-8 2xl:py-4 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors shadow-md font-medium text-sm 2xl:text-lg mt-2"
@@ -139,8 +138,7 @@ export default function DetailsPage() {
                   </p>
                 </div>
 
-                
-                <a  href="https://www.google.com/maps/search/?api=1&query=Merricks+General+Store+3460+Frankston+Flinders+Rd+Merricks+VIC+3916"
+                <a href="https://www.google.com/maps/search/?api=1&query=Merricks+General+Store+3460+Frankston+Flinders+Rd+Merricks+VIC+3916"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block px-5 py-2.5 2xl:px-8 2xl:py-4 bg-sage-700 text-white rounded-lg hover:bg-sage-800 transition-colors shadow-md font-medium text-sm 2xl:text-lg mt-2"
@@ -177,7 +175,7 @@ export default function DetailsPage() {
                 November in Victoria can be warm and beautiful, but also unpredictable! The ceremony will be outdoors, so please come prepared for sun or possible showers.
               </p>
               <p className="text-sm 2xl:text-lg text-sage-700 leading-relaxed">
-                We'll have a backup plan in case of rain.
+                We'll have a backup plan in case of rain. The wet weather options will be at the same locations, so no need to go anywhere different in the event of rain.
               </p>
             </div>
 
@@ -185,6 +183,16 @@ export default function DetailsPage() {
               <h3 className="text-xl md:text-2xl 2xl:text-3xl font-serif text-sage-900 mb-3 2xl:mb-4">Kids & +1s</h3>
               <p className="text-sm 2xl:text-lg text-sage-700 leading-relaxed">
                 We would love to celebrate with everyone, however due to limited numbers we are only able to invite the guests named on the invitation. Sadly, this means no children or additional guests. We appreciate your understanding.
+              </p>
+            </div>
+
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 2xl:p-10 shadow-sm border border-sage-200">
+              <h3 className="text-xl md:text-2xl 2xl:text-3xl font-serif text-sage-900 mb-3 2xl:mb-4">Dress Code</h3>
+              <p className="text-sm 2xl:text-lg text-sage-700 leading-relaxed mb-3">
+                Colourful garden formal — no black please! Think florals, pastels, and bold colours that suit a beautiful spring garden setting.
+              </p>
+              <p className="text-sm 2xl:text-lg text-sage-700 leading-relaxed">
+                For those wearing heels, we recommend avoiding stilettos or using heel stoppers as the ceremony will be held on grass.
               </p>
             </div>
 
@@ -201,6 +209,24 @@ export default function DetailsPage() {
               </Link>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* RSVP Footer */}
+      <section className="py-16 md:py-20 2xl:py-32 px-4 md:px-6 bg-sage-700">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl md:text-4xl 2xl:text-5xl font-serif text-white mb-4 2xl:mb-6">
+            Will You Join Us?
+          </h2>
+          <p className="text-sage-200 mb-8 2xl:mb-10 text-base 2xl:text-lg">
+            We kindly request the pleasure of your response by 1st September 2026
+          </p>
+          <Link
+            href="/rsvp"
+            className="inline-block px-12 py-4 2xl:px-14 2xl:py-5 text-base 2xl:text-lg bg-white text-sage-700 rounded-lg hover:bg-sage-50 transition-colors shadow-md font-medium"
+          >
+            RSVP Now
+          </Link>
         </div>
       </section>
     </main>
