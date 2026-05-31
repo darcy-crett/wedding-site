@@ -5,7 +5,6 @@ export const BANK_DETAILS: {
   bank: string
 } = {
   name: 'Darcy Crettenden',
-  bsb: '123-456',
-  account: '12345678',
-  bank: 'Westpac'
+  bsb: '733-173',
+  account: '882601'
 }

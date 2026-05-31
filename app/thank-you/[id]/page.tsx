@@ -110,10 +110,10 @@ export default async function ThankYouPage({ params }: PageProps) {
               <span className="text-sage-700">Account number:</span>
               <span className="font-medium">{BANK_DETAILS.account}</span>
             </div>
-            <div className="flex justify-between text-base 2xl:text-lg">
+            {/* <div className="flex justify-between text-base 2xl:text-lg">
               <span className="text-sage-700">Bank:</span>
               <span className="font-medium">{BANK_DETAILS.bank}</span>
-            </div>
+            </div> */}
           </div>
         </div>
 
