@@ -261,7 +261,7 @@ export default function HomePage() {
                   The First Date
                 </h3>
                 <p className="text-sage-700 text-base xl:text-lg 2xl:text-xl leading-relaxed mb-4">
-                  Then in 2019, we finally started talking more, laughing more and growing closer. Our first official date was a walk through the Royal Botanical Gardens and the conversation flowed easily that day.
+                  Then in 2019, we finally started talking a bit more. Our first official date was a walk through the Royal Botanical Gardens and the conversation flowed easily that day.
                 </p>
                 <p className="text-sage-700 text-base xl:text-lg 2xl:text-xl leading-relaxed">
                   By our 'technical' third date, July 8th, 2020, Darcy asked, "Do you want to be official?" Kaylah, very confused, replied, "What do you mean by that?" When Darcy clarified, "Like… boyfriend and girlfriend," she blurted out, "Ohhh, I thought you meant officially kissing or something haha! Yeah, I'd like that!" Darcy laughed and that was the start of us.
@@ -287,7 +287,7 @@ export default function HomePage() {
                   By the end of 2024, Darcy knew what he wanted to do next. The plan was set: a proposal in Japan, in April 2025, during the one magical week when Mt. Fuji AND the cherry blossoms would be visible together.
                 </p>
                 <p className="text-sage-700 text-base xl:text-lg 2xl:text-xl leading-relaxed mb-4">
-                  (Seeing both at their peak is rare. The cherry blossoms bloom for only one week each year, and Mt. Fuji is famously shy, visible just 20–30% of the time. Darcy checked all the forecasts, bloom maps, and weather charts.)
+                  Seeing both at their peak is rare. The cherry blossoms bloom for only one week each year, and Mt. Fuji is famously shy, visible just 20–30% of the time. Darcy checked all the forecasts, bloom maps, and weather charts.
                 </p>
                 <p className="text-sage-700 text-base xl:text-lg 2xl:text-xl leading-relaxed mb-4">
                   We rode bikes through the quiet lakeside, pink petals floating around us, and Darcy knew exactly the spot. But Kaylah kept turning to look at him making it very difficult for him to secretly get the ring out of his bag.
