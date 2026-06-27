@@ -232,7 +232,7 @@ export default function RSVPPage() {
           {/* Bus Service Interest */}
           <div>
             <label className="block text-sm 2xl:text-base font-medium text-sage-800 mb-2">
-              Would you be interested in an opt-in bus service from a central Melbourne location to the wedding and back?
+              Would you be interested in an opt-in bus service from a central Melbourne location to the wedding and back? *
             </label>
             <p className="text-sm 2xl:text-base text-sage-600 mb-4">
               Please note: This would cost each person $50-$80 depending on how many people opt in
@@ -242,6 +242,7 @@ export default function RSVPPage() {
                 <input
                   type="radio"
                   name="bus-interest"
+                  required
                   value="yes"
                   className="mr-4 w-4 h-4 2xl:w-5 2xl:h-5 text-sage-700"
                 />
