@@ -319,7 +319,7 @@ export default function HomePage() {
               Will You Join Us?
             </h2>
             <p className="text-sage-200 mb-8 text-lg xl:text-xl">
-              We kindly request the pleasure of your response by 14th September 2026
+              We kindly request the pleasure of your response via the link below.
             </p>
             <Link
               href="/rsvp"
